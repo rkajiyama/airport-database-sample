@@ -1,0 +1,19 @@
+airport-database-sample uses separate licenses for code and data:
+
+1. Original code, configuration, schema DDL, sample queries, tests and
+   documentation: MIT (LICENSES/MIT.txt).
+2. Generated dataset and original database compilation contributions:
+   Creative Commons Attribution 4.0 International (LICENSES/CC-BY-4.0.txt).
+   Credit: RKajiyama, airport-database-sample.
+   Source: https://github.com/rkajiyama/airport-database-sample
+   Preserve source attribution and indicate modifications when sharing.
+3. Upstream OurAirports data: Public Domain.
+4. Upstream Wikidata structured data: CC0 1.0.
+
+The CC BY 4.0 grant applies only to rights held by this project. It does not
+impose new restrictions on upstream public-domain/CC0 material, and it does
+not remove upstream notices. See SOURCES.md for attribution and scope.
+
+Generated load.sql combines MIT-licensed export statements and CC-BY-4.0
+dataset contributions. Treat it as a dataset distribution with this LICENSE
+and SOURCES.md, rather than as MIT-only code.
