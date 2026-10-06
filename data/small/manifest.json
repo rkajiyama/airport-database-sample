@@ -1,0 +1,121 @@
+{
+  "data_license": "CC-BY-4.0",
+  "code_license": "MIT",
+  "config": {
+    "seed": 20261006,
+    "start_date_utc": "2026-01-01",
+    "days": 30,
+    "flight_count": 10000,
+    "passenger_count": 30000,
+    "bookings_per_flight": 10,
+    "turnaround_minutes": 60,
+    "airline_qids": [
+      "Q204284",
+      "Q213140",
+      "Q32396",
+      "Q188920",
+      "Q174769",
+      "Q185339",
+      "Q9325",
+      "Q131005",
+      "Q32245",
+      "Q32491"
+    ],
+    "airports": {
+      "RJTT": "Asia/Tokyo",
+      "RJAA": "Asia/Tokyo",
+      "RJBB": "Asia/Tokyo",
+      "RJOO": "Asia/Tokyo",
+      "RJCC": "Asia/Tokyo",
+      "RJFF": "Asia/Tokyo",
+      "ROAH": "Asia/Tokyo",
+      "RJGG": "Asia/Tokyo",
+      "RKSI": "Asia/Seoul",
+      "RCTP": "Asia/Taipei",
+      "VHHH": "Asia/Hong_Kong",
+      "WSSS": "Asia/Singapore",
+      "VTBS": "Asia/Bangkok",
+      "WMKK": "Asia/Kuala_Lumpur",
+      "YSSY": "Australia/Sydney",
+      "YMML": "Australia/Melbourne",
+      "NZAA": "Pacific/Auckland",
+      "KLAX": "America/Los_Angeles",
+      "KSFO": "America/Los_Angeles",
+      "KSEA": "America/Los_Angeles",
+      "KJFK": "America/New_York",
+      "KORD": "America/Chicago",
+      "KATL": "America/New_York",
+      "CYYZ": "America/Toronto",
+      "CYVR": "America/Vancouver",
+      "EGLL": "Europe/London",
+      "LFPG": "Europe/Paris",
+      "EDDF": "Europe/Berlin",
+      "EHAM": "Europe/Amsterdam",
+      "OMDB": "Asia/Dubai"
+    }
+  },
+  "row_counts": {
+    "country": 249,
+    "region": 3987,
+    "airport": 86208,
+    "airline": 6198,
+    "aircraft_type": 1,
+    "aircraft": 167,
+    "route": 322,
+    "flight_schedule": 334,
+    "flight": 10000,
+    "passenger": 30000,
+    "booking": 100000
+  },
+  "source_manifest_sha256": "785329f6ab0948c633aa09b89342135d2ac86501895885f7bd13608e81685d29",
+  "outputs": {
+    "aircraft.csv": {
+      "bytes": 4753,
+      "sha256": "e717a10961de45b7f2c2f91e52849366a23192782662496d8ce4a05e126f86b8"
+    },
+    "aircraft_type.csv": {
+      "bytes": 120,
+      "sha256": "6428734e1ebe8c244056094922922324a647f5acac4e5aecd2d71eb301c01ef5"
+    },
+    "airline.csv": {
+      "bytes": 680039,
+      "sha256": "63d167ad9170842b745ef7e352235c8413fe224af56c1b76e7253944fa1f5491"
+    },
+    "airport.csv": {
+      "bytes": 11189812,
+      "sha256": "7a29f44fcb6f5f051cda1a4fda92ed3a1cb0a8b79d78944f3e0c2ba2f6f3db40"
+    },
+    "booking.csv": {
+      "bytes": 6262585,
+      "sha256": "9da9bd55a3c50ae8978ee9066a3b03f91db3ae344b6c9b8d4d9ea8c30015b480"
+    },
+    "country.csv": {
+      "bytes": 4315,
+      "sha256": "9c62deb3e93ef90a72a4e2ddb704ea2b489d85e48a463936b3254662c34fab78"
+    },
+    "flight.csv": {
+      "bytes": 1511725,
+      "sha256": "4134361af2e8fc12297afc4d34a0a5c819eecd8a921f55fb173e4c397d066ea9"
+    },
+    "flight_schedule.csv": {
+      "bytes": 22048,
+      "sha256": "f3fc4349d418542e40bd02473f944a5dea9e3fcbb95dc3407e384c76ff12be88"
+    },
+    "passenger.csv": {
+      "bytes": 1998941,
+      "sha256": "81ef20a1a83a12303ed3ed24ebed59f5f9b3debee99c28b5f34719d5c7976ef3"
+    },
+    "region.csv": {
+      "bytes": 102740,
+      "sha256": "c86b6fed699f3e69b632adc81f608e855f1684cb70857a999e20b1644e1d5627"
+    },
+    "route.csv": {
+      "bytes": 10174,
+      "sha256": "15a414e1664d02e255d52fa598426e0a53d3b6fe58d79dfc61d2546bac67f8e4"
+    },
+    "load.sql": {
+      "bytes": 29493671,
+      "sha256": "0e5a5bcd889e4b108cc8283752c0ae62b3727a304ec6aa88daf295d9fe13efc5"
+    }
+  }
+}

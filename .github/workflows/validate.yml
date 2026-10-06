@@ -1,0 +1,50 @@
+name: Validate sample
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: local-ci-only
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -plocal-ci-only"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=12
+    env:
+      PYTHONPATH: src
+      MYSQL_PWD: local-ci-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate data and behavior
+        run: |
+          python -m airport_sample.validate
+          python -m unittest discover -s tests -v
+      - name: Generate from pinned sources and verify reproducibility
+        run: |
+          python -m airport_sample.generate --output data/regenerated
+          python -m airport_sample.validate --output data/regenerated
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          original = json.loads(Path('data/small/manifest.json').read_text())['outputs']
+          regenerated = json.loads(Path('data/regenerated/manifest.json').read_text())['outputs']
+          assert original == regenerated, 'Generated output differs from the committed manifest'
+          PY
+      - name: Install MySQL client
+        run: sudo apt-get update && sudo apt-get install -y mysql-client
+      - name: Import and query MySQL 8.4
+        run: |
+          mysql --default-character-set=utf8mb4 -h 127.0.0.1 -u root < sql/schema.sql
+          mysql --binary-mode --default-character-set=utf8mb4 -h 127.0.0.1 -u root < data/regenerated/load.sql
+          mysql --default-character-set=utf8mb4 -h 127.0.0.1 -u root < sql/verify.sql
+          mysql --default-character-set=utf8mb4 -h 127.0.0.1 -u root < sql/examples.sql

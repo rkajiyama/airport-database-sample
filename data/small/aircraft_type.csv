@@ -1,0 +1,2 @@
+aircraft_type_id,name,seat_capacity,cruise_kmh,max_block_minutes,is_synthetic
+1,Synthetic narrow-body 180,180,780,600,1

@@ -1,0 +1,7 @@
+# Dataset snapshots are reviewed through their source queries and checksums.
+data/source/** linguist-vendored
+data/small/** linguist-generated
+*.py text eol=lf
+*.sql text eol=lf
+*.md text eol=lf
+*.yml text eol=lf

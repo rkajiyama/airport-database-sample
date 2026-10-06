@@ -1,0 +1,17 @@
+{
+  "seed": 20261006,
+  "start_date_utc": "2026-01-01",
+  "days": 30,
+  "flight_count": 10000,
+  "passenger_count": 30000,
+  "bookings_per_flight": 10,
+  "turnaround_minutes": 60,
+  "airline_qids": ["Q204284", "Q213140", "Q32396", "Q188920", "Q174769", "Q185339", "Q9325", "Q131005", "Q32245", "Q32491"],
+  "airports": {
+    "RJTT": "Asia/Tokyo", "RJAA": "Asia/Tokyo", "RJBB": "Asia/Tokyo", "RJOO": "Asia/Tokyo", "RJCC": "Asia/Tokyo", "RJFF": "Asia/Tokyo", "ROAH": "Asia/Tokyo", "RJGG": "Asia/Tokyo",
+    "RKSI": "Asia/Seoul", "RCTP": "Asia/Taipei", "VHHH": "Asia/Hong_Kong", "WSSS": "Asia/Singapore", "VTBS": "Asia/Bangkok", "WMKK": "Asia/Kuala_Lumpur",
+    "YSSY": "Australia/Sydney", "YMML": "Australia/Melbourne", "NZAA": "Pacific/Auckland",
+    "KLAX": "America/Los_Angeles", "KSFO": "America/Los_Angeles", "KSEA": "America/Los_Angeles", "KJFK": "America/New_York", "KORD": "America/Chicago", "KATL": "America/New_York", "CYYZ": "America/Toronto", "CYVR": "America/Vancouver",
+    "EGLL": "Europe/London", "LFPG": "Europe/Paris", "EDDF": "Europe/Berlin", "EHAM": "Europe/Amsterdam", "OMDB": "Asia/Dubai"
+  }
+}
