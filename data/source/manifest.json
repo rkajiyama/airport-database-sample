@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "file": "airports.csv",
+      "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "retrieved_at_utc": "2026-10-06T11:56:10.554254+00:00",
+      "license": "Public Domain",
+      "license_url": "https://ourairports.com/data/",
+      "bytes": 12741155,
+      "sha256": "fad6af8c5e7f86a15559af2394b20bb0cb1e3759cd7dc831c1ae287859ae6947",
+      "entity_count": 86208
+    },
+    {
+      "file": "countries.csv",
+      "url": "https://davidmegginson.github.io/ourairports-data/countries.csv",
+      "retrieved_at_utc": "2026-10-06T11:56:10.808276+00:00",
+      "license": "Public Domain",
+      "license_url": "https://ourairports.com/data/",
+      "bytes": 24583,
+      "sha256": "2a9dbee691125b0cdb8ceb5fe227c48c903f99c488963b8e53e2ab366521c639",
+      "entity_count": 249
+    },
+    {
+      "file": "regions.csv",
+      "url": "https://davidmegginson.github.io/ourairports-data/regions.csv",
+      "retrieved_at_utc": "2026-10-06T11:56:11.069586+00:00",
+      "license": "Public Domain",
+      "license_url": "https://ourairports.com/data/",
+      "bytes": 485265,
+      "sha256": "9220d6582b804cfdec8432e5bb21456699c9df8969bf5d8886beb62ff0b1318b",
+      "entity_count": 3987
+    },
+    {
+      "file": "airlines.json",
+      "url": "https://query.wikidata.org/sparql?query=%23+SPDX-License-Identifier%3A+MIT%0A%23+All+entities+classified+as+airline%2C+including+instances+of+airline+subclasses.%0A%23+No+active-status%2C+code-presence%2C+country%2C+or+LIMIT+filter.%0ASELECT+DISTINCT+%3Fairline+%3Fname_en+%3Fname_ja+%3Fiata+%3Ficao+%3Fcountry+%3Finception+%3Fdissolved+WHERE+%7B%0A++%3Fairline+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ46970+.%0A++OPTIONAL+%7B+%3Fairline+rdfs%3Alabel+%3Fname_en+FILTER%28LANG%28%3Fname_en%29+%3D+%22en%22%29+%7D%0A++OPTIONAL+%7B+%3Fairline+rdfs%3Alabel+%3Fname_ja+FILTER%28LANG%28%3Fname_ja%29+%3D+%22ja%22%29+%7D%0A++OPTIONAL+%7B+%3Fairline+wdt%3AP229+%3Fiata+%7D%0A++OPTIONAL+%7B+%3Fairline+wdt%3AP230+%3Ficao+%7D%0A++OPTIONAL+%7B+%3Fairline+wdt%3AP17+%3Fcountry+%7D%0A++OPTIONAL+%7B+%3Fairline+wdt%3AP571+%3Finception+%7D%0A++OPTIONAL+%7B+%3Fairline+wdt%3AP576+%3Fdissolved+%7D%0A%7D%0A&format=json",
+      "retrieved_at_utc": "2026-10-06T11:56:22.793098+00:00",
+      "license": "CC0-1.0",
+      "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "bytes": 4237721,
+      "sha256": "473b4ca8f8c11cd3d218274cecedd676f55e0bc6a511250f51f1586b0cced29e",
+      "entity_count": 6198
+    }
+  ],
+  "airline_query": "# SPDX-License-Identifier: MIT\n# All entities classified as airline, including instances of airline subclasses.\n# No active-status, code-presence, country, or LIMIT filter.\nSELECT DISTINCT ?airline ?name_en ?name_ja ?iata ?icao ?country ?inception ?dissolved WHERE {\n  ?airline wdt:P31/wdt:P279* wd:Q46970 .\n  OPTIONAL { ?airline rdfs:label ?name_en FILTER(LANG(?name_en) = \"en\") }\n  OPTIONAL { ?airline rdfs:label ?name_ja FILTER(LANG(?name_ja) = \"ja\") }\n  OPTIONAL { ?airline wdt:P229 ?iata }\n  OPTIONAL { ?airline wdt:P230 ?icao }\n  OPTIONAL { ?airline wdt:P17 ?country }\n  OPTIONAL { ?airline wdt:P571 ?inception }\n  OPTIONAL { ?airline wdt:P576 ?dissolved }\n}\n"
+}

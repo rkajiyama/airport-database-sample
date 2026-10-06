@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: MIT
+# All entities classified as airline, including instances of airline subclasses.
+# No active-status, code-presence, country, or LIMIT filter.
+SELECT DISTINCT ?airline ?name_en ?name_ja ?iata ?icao ?country ?inception ?dissolved WHERE {
+  ?airline wdt:P31/wdt:P279* wd:Q46970 .
+  OPTIONAL { ?airline rdfs:label ?name_en FILTER(LANG(?name_en) = "en") }
+  OPTIONAL { ?airline rdfs:label ?name_ja FILTER(LANG(?name_ja) = "ja") }
+  OPTIONAL { ?airline wdt:P229 ?iata }
+  OPTIONAL { ?airline wdt:P230 ?icao }
+  OPTIONAL { ?airline wdt:P17 ?country }
+  OPTIONAL { ?airline wdt:P571 ?inception }
+  OPTIONAL { ?airline wdt:P576 ?dissolved }
+}
