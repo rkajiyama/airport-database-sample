@@ -29,6 +29,10 @@ DELIMITER ;
 CALL verify_sample();
 DROP PROCEDURE verify_sample;
 SELECT 'MySQL verification passed' AS result;
+-- Refresh InnoDB statistics before reporting allocated table/index bytes.
+ANALYZE TABLE country, region, airport, airline, aircraft_type, aircraft,
+  route, flight_schedule, flight, passenger, booking;
+SET SESSION information_schema_stats_expiry = 0;
 SELECT table_name, table_rows, data_length, index_length
 FROM information_schema.tables WHERE table_schema = 'airport_sample'
 ORDER BY table_name;

@@ -31,9 +31,14 @@ Additional data checks cover primary keys, foreign references, record counts,
 UTC/local conversions, planned and actual fleet continuity, turnaround, seat
 capacity/uniqueness, booking timestamps and cancellation consistency.
 
-MySQL execution is checked by the repository's MySQL 8.4 GitHub Actions job;
-consult the PR/Actions result for its actual outcome. This local environment did
-not have a running MySQL server at initial verification time.
+MySQL 8.4 import, SQL assertions and example queries passed in GitHub Actions
+on 2026-10-06 (run 37461562019). This local environment did not have a running
+MySQL server. Table statistics are refreshed before reporting allocated bytes;
+TABLE_ROWS remains an InnoDB estimate, while assertions use exact COUNT(*).
+
+The Code Review plugin was invoked for PR #1 but requires a connected GitHub
+account; it did not provide an automated review or approval. The review above
+and repository CI are separate verification results.
 
 ## Practical limits
 
